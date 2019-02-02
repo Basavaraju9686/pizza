@@ -1,0 +1,207 @@
+<!-- 
+RIGHT CONTENT AREA
+<div class="content-area">
+   <div class="content-wrapper">
+ 
+     <div class="row page-tilte align-items-center">
+       <div class="col-md-auto">
+         <h1 class="weight-300 h3 title">Add Image</h1>
+       </div>
+     </div>
+ 
+     <div class="content">
+                 <div class="card">
+                     
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col-lg-12">
+                           <div class="login-form-wrapper">
+                                   <form action="/action_page.php" #form="ngForm"  (ngSubmit)="validation(form.value)" class="sn-form sn-form-boxed">
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">imageName</label>
+                                      <input type="text" id="imageName" name="imageName" class="form-control"  fromControlName="imageName" placeholder="Enter product price" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">imagePath</label>
+                                      <input type="text" id="imagePath" name="imagePath" class="form-control"  fromControlName="imagePath" placeholder="Enter imagePath" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">header</label>
+                                      <input type="text" id="header" name="header" class="form-control"  fromControlName="header" placeholder="Enter header" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    
+
+                                  
+                                      
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">desc1</label>
+                                      <input type="text" id="desc1" name="desc1" class="form-control"  fromControlName="desc1" placeholder="Enter desc1" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">desc2</label>
+                                      <input type="text" id="desc2" name="desc2" class="form-control"  fromControlName="desc2" placeholder="Enter desc2" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">desc3</label>
+                                      <input type="text" id="desc3" name="desc3" class="form-control"  fromControlName="desc3" placeholder="Enter desc3" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                      
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">desc4</label>
+                                      <input type="text" id="desc4" name="desc4" class="form-control"  fromControlName="desc4" placeholder="Enter desc3" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">createdDate</label>
+                                      <input type="datetime-local" id="createdDate" name="createdDate" class="form-control"  fromControlName="createdDate" placeholder="Enter createdDate" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">modifiedDate</label>
+                                      <input type="datetime-local" id="modifiedDate" name="modifiedDate" class="form-control"  fromControlName="modifiedDate" placeholder="Enter modifiedDate" required ngModel>
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                  
+                                    <div class="form-group">
+                                                               <button type="submit" id="" class="sn-button btn-block btn-lg">
+                                                                       <span>Add Image</span>
+                                                                     </button>
+                                                         </div>
+
+                                                         
+
+
+                             
+                           </form> 
+                            
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+   </div>  -->
+
+
+   RIGHT CONTENT AREA
+   <div class="content-area">
+      <div class="content-wrapper">
+    
+        <div class="row page-tilte align-items-center">
+          <div class="col-md-auto">
+            
+          </div>
+        </div>
+    
+        <div class="content" style="margin-left: 1cm">
+            <h1 class="weight-300 h3 title"><b>Add Image</b></h1>
+                    <div class="card" >
+                      
+                        <div class="card-body" >
+                            <div class="row">
+                                <div class="col-lg-4">
+                              <div class="login-form-wrapper" style="margin-left: 1cm">
+                                      <form  #updateForm="ngForm"  (ngSubmit)="validation(updateForm.value)" class="sn-form sn-form-boxed">
+                                
+                                        <div class="form-group">
+                                    <label class="font-weight-bold">Image Name</label>
+                                    <input type="text"id="imageName" name="imageName" class="form-control"     required [(ngModel)]="imageName">
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+
+
+                                  <div class="form-group"  style="display: none">
+                                    <label class="font-weight-bold">Image id</label>
+                                    <input type="text"id="imageId" name="imageId" class="form-control"   required [(ngModel)]="imageId">
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+
+                                  <!-- <div class="form-group">
+                                      <label class="font-weight-bold">image</label>
+                                      <input type="text"id="image" name="image" class="form-control"     required [(ngModel)]="image">
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div> -->
+                                  <div class="form-group">
+                                   <label class="font-weight-bold">Image Path</label>
+                                   <input type="text"id="imagePath" name="imagePath" class="form-control"   required [(ngModel)]="imagePath">
+                                   <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                 </div>
+                                  <div class="form-group">
+                                      <label class="font-weight-bold">Header</label>
+                                      <input type="text" id="header" name="header" class="form-control"   required [(ngModel)]="header">
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Desc1</label>
+                                        <input type="text" id="desc1" name="desc1" class="form-control"   required [(ngModel)]="desc1">
+                                        <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="font-weight-bold">Desc2</label>
+                                          <input type="text" id="desc2" name="desc2" class="form-control"   required [(ngModel)]="desc2">
+                                          <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Desc3</label>
+                                            <input type="text" id="desc3" name="desc3" class="form-control"   required [(ngModel)]="desc3">
+                                            <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="font-weight-bold">Desc4</label>
+                                              <input type="text" id="desc4" name="desc4" class="form-control"   required [(ngModel)]="desc4">
+                                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                            </div>
+                                            <!-- <div class="form-group">
+                                                <label class="font-weight-bold">bannerArea</label>
+                                                <input type="text" id="bannerArea" name="bannerArea" class="form-control"   required [(ngModel)]="bannerArea">
+                                                <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                              </div>       -->
+                                    
+                               <div class="form-group">
+                                <button type="submit" id="" class="sn-button btn-block btn-lg" style="background-color: rgb(102, 196, 15)">
+                                   <span><b>Update Image</b></span> </button>
+                                 </div>
+   
+                            <div class="form-group"></div>
+   
+                               </form> 
+                              <!-- <a routerLink="/viewimage">
+                               ViewImage
+                             </a>
+    -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div> 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+

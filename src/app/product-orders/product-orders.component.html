@@ -1,0 +1,152 @@
+<!--RIGHT CONTENT AREA-->
+<div class="content-area">
+    <div class="content-wrapper">
+  
+      <div class="row page-tilte align-items-center">
+        <div class="col-md-auto">
+          <h1 class="weight-300 h3 title">Product Orders</h1>
+        </div>
+      </div>
+  
+      <div class="content">
+  
+  
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card mb-4">
+              <div class="card-header">Product Orders</div>
+              <div class="card-body table-responsive">
+                  <table id="product-orders" class="table table-striped mb-4 bg-white table-bordered">
+                    <thead class="thead-light2">
+                      <tr>
+                        <th  class="cart-column-remove" scope="col">orderId</th>
+                        <th class="cart-column-price" scope="col">customerEmail</th> 
+                        <th class="cart-column-price" scope="col">customerMobileNumber</th> 
+                         <th class="cart-column-quantity" scope="col">customerName</th> 
+                         <th class="cart-column-total" scope="col">orderDate</th>
+                        <th class="cart-column-remove" scope="col">orderNumber</th>
+                        <th class="cart-column-remove" scope="col">orderPrice</th>
+                        <th class="cart-column-remove" scope="col">orderStatus</th>
+                        <th class="cart-column-remove" scope="col">paymentMode</th>
+                        <th class="cart-column-remove" scope="col">transactionId</th>
+                         <th class="cart-column-remove" scope="col">orderDetails</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let c of CartItemList">
+                        <td>
+                          <!-- productId -->
+                          <a href="javascript:;" class="product-title">{{c.orderId}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.customerEmail}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.customerMobileNumber}}</a>
+                        </td>
+                       <td>
+                          <a href="javascript:;" class="product-title">{{c.customerName}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.orderDate}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.orderNumber}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.orderPrice}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.orderStatus}}</a>
+                        </td>
+                         <td>
+                          <a href="javascript:;" class="product-title">{{c.paymentMode}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{c.transactionId}}</a>
+                        </td>
+                         <td>
+                         <button><a (click)="order(c.orderId)">orderDetails</a></button>
+                        </td>
+                       
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              <div class="card-body table-responsive">
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--RIGHT CONTENT AREA-->
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Product Detail</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card mb-4">
+            <div class="card-header">Product Orders</div>
+            <div class="card-body table-responsive">
+                <table id="product-orders" class="table table-striped mb-4 bg-white table-bordered">
+                  <thead class="thead-light2">
+                    <tr  *ngFor="let o of OrderItemList">
+                      <th  class="cart-column-remove" scope="col">orderdetailId</th>
+                    <th class="cart-column-price" scope="col">productAmount</th> 
+                    <th class="cart-column-price" scope="col">productId</th> 
+                     <th class="cart-column-quantity" scope="col">productImagePath</th> 
+                     <th class="cart-column-total" scope="col">productName</th>
+                    <th class="cart-column-remove" scope="col">productQuantity</th>
+                    <th class="cart-column-remove" scope="col">productSku</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let o of OrderItemList">
+                      <td>
+                        <!-- productId -->
+                        <a href="javascript:;" class="product-title">{{o.orderdetailId}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{o.productAmount}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{o.productId}}</a>
+                      </td>
+                     <td>
+                        <a href="javascript:;"   class="product-image">
+                            <img [src]="o.productImagePath" alt="product image">
+                          </a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{o.productName}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{o.productQuantity}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{o.productSku}}</a>
+                      </td>
+                     
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <div class="card-body table-responsive">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,87 @@
+<!-- Page Conttent -->
+
+
+
+<main class="page-content">
+
+    <!-- My Account Page -->
+    <div class="my-account-area section-padding-md">
+      <div class="container">
+        <div class="row">
+           
+  <!-- Register Form -->
+  <div class="col-lg-4 col-md-4 col-sm-12 mx-auto">
+    <div class="login-form-wrapper">
+      <form id="tab"   (ngSubmit)=" validation(form.value) && !form.valid"  [formGroup]="form">
+       
+     
+          <div class="form-group"></div>
+            <h4>bannerName:</h4>
+            <input type="text"   class="form-control"  placeholder="enter name" formControlName="bannerName" [ngClass]="{'is-invalid':form.get('bannerName').touched && form.get('bannerName').invalid}">
+            <div *ngIf="form.get('bannerName').touched && form.get('bannerName').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('bannerName').errors.required"><b>bannerName Required</b></div>
+              <div *ngIf="form.get('bannerName').errors.pattern"><b>Wrong Input</b> </div>
+            </div>
+          
+            <!-- <div class="single-input"> 
+                <h4>Gender:</h4>
+                 <select id="gender" name="gender" aria-placeholder="choose gender" ngModel class="form-control">
+                   <option value="" disabled >Choose gender</option>
+                   <option value="Male">Male</option>
+                   <option value="Female">Female</option>
+                  </select>
+                 </div> -->
+             
+          
+          
+            <div class="form-group"></div>
+                            <h4>bannerArea:</h4>
+                            <input type="text" placeholder="enter bannerArea"  class="form-control"  formControlName="bannerArea" [ngClass]="{'is-invalid':form.get('bannerArea').touched && form.get('bannerArea').invalid}" />
+                            <div *ngIf="form.get('bannerArea').touched && form.get('bannerArea').invalid"  class="invalid-feedback">
+                              <div *ngIf="form.get('bannerArea').errors.required"><b>bannerArea Required</b></div>
+                            
+                              <div *ngIf="form.get('bannerArea').errors.pattern"><b> Only text Accepted </b></div>
+                            </div>
+          
+            <div class="form-group"></div>
+            <!-- <h4>Email:</h4>
+            <input type="text"   class="form-control" placeholder="enter email" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}">
+            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('email').errors.required"><b>email Name  Required</b></div>
+              <div *ngIf="form.get('email').errors.pattern"><b>Wrong Input </b></div>
+            </div> -->
+            <!-- <h4>password</h4>
+            <input type="password"   class="form-control" placeholder=" enter password " formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}">
+            <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('password').errors.required"><b>email  Required</b></div>
+              <div *ngIf="form.get('password').errors.pattern"><b>Wrong Input</b></div>
+            </div>
+            <h4>confirm password</h4>
+            <input type="password"   class="form-control" placeholder=" confirm password " formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}">
+            <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('password').errors.required"><b>email  Required</b></div>
+              <div *ngIf="form.get('password').errors.pattern"><b>Wrong Input</b></div>
+            </div> -->
+         
+            <br>
+          
+          
+            <button class="sn-button btn-block btn-lg" >
+              <span>Register</span>
+            </button>
+          
+       
+       
+      </form>
+                </div>
+              </div>
+              <!--// Register Form -->
+  
+        </div>
+      </div>
+    </div>
+    <!--// My Account Page -->
+  
+  
+  </main>
+  <!--// Page Conttent -->

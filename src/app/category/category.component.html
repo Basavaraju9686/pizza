@@ -1,0 +1,101 @@
+<!-- 
+  
+ 
+  <div class="col-lg-4 col-md-4 col-sm-12 mx-auto">
+    <div class="login-form-wrapper">
+      <form  #form="ngForm"  (ngSubmit)="validation(form.value)" class="sn-form sn-form-boxed">
+        <h2 style="text-align: center"><u>Banner</u></h2>
+        <div class="sn-form-inner">
+          <div class="single-input">
+            <h4>bannerName</h4>
+            <input type="text" ngModel name="bannerName" placeholder="enter bannerName" id="bannerName">
+          </div>
+          <div class="single-input">
+            <h4>bannerArea</h4>
+            <input type="text" ngModel name="bannerArea" placeholder="enter bannerArea">
+          </div>
+         
+  
+          <div class="single-input">
+            <button type="submit" class="sn-button btn-block btn-lg">
+              <span>Add Banner</span>
+            </button>
+          </div>
+        </div>
+      </form>
+      <a routerLink="/view-banner">
+        ViewBanner  
+      </a>
+                </div>
+              </div>
+              
+  
+   -->
+
+
+
+   
+   <div class="content-area" style="margin-left: 7cm">
+    <div class="content-wrapper">
+  
+      <div class="row page-tilte align-items-center">
+        <div class="col-md-auto">
+          <h1 class="weight-300 h3 title"><b>Add categories</b></h1>
+        </div>
+      </div>
+      <div class="content" style="background-color:#FFFFE0" >
+        <!-- <div class="card">
+            <div class="card-header">add product</div> -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                  <div class="login-form-wrapper">
+                          <form  [formGroup]="form" (ngSubmit)=" onSubmit(form.value) && !form.valid" class="sn-form sn-form-boxed">
+                           <div class="form-group">
+                             <label class="font-weight-bold">Category Name</label>
+                             <input type="text"   class="form-control" formControlName="categoryName" [ngClass]="{'is-invalid':form.get('categoryName').touched && form.get('categoryName').invalid}"/>
+                          <div *ngIf="form.get('categoryName').touched && form.get('categoryName').invalid" class="invalid-feedback">
+                              <div *ngIf="form.get('categoryName').errors.required">category Name  Required</div>
+                              <div *ngIf="form.get('categoryName').errors.pattern">Wrong Input </div>
+                           </div>
+                           </div>
+
+                           <div class="form-group">
+                             <label class="font-weight-bold">Description</label>
+                             <input type="text"   class="form-control" formControlName="description" [ngClass]="{'is-invalid':form.get('description').touched && form.get('description').invalid}"/>
+                          <div *ngIf="form.get('description').touched && form.get('description').invalid" class="invalid-feedback">
+                              <div *ngIf="form.get('description').errors.required">description Required</div>
+                              <div *ngIf="form.get('description').errors.pattern">Wrong Input </div>
+                           </div>
+                           </div>
+                        
+                         
+                           <div class="form-group">
+                    <button type="submit"  [disabled]="!form.valid" style="background-color:#32CD32" class="sn-button btn-block btn-lg"   >
+                        <span><b>Add Category Type</b></span></button>
+                    </div>
+
+                       <!-- <a routerLink="/viewcategory">View category</a> -->
+                    
+                  </form> 
+                   
+
+            </div>
+        </div>
+    </div>
+      
+          </div>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+

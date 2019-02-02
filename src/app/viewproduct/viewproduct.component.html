@@ -1,0 +1,131 @@
+	
+	
+
+     
+        <!-- <div class="cart-page-area section-padding-xs bg-white"> -->
+          <div class="container" style="margin-left: 7cm;overflow-y: hidden;margin-right: 0px">
+            <h3 class="product-title"style="text-align:center"><b>Product List</b></h3>
+<!--            
+            <div class="cart-table table-responsive"> -->
+              <table class="table table-bordered table-hover" style="background-color:#FFFFE0;">
+                <thead>
+                  
+                    <tr>	
+                          
+                      <th  class="cart-column-productname" scope="col">In stock</th>
+                     <th class="cart-column-price" scope="col">Sku</th>
+                     <th class="cart-column-price" scope="col">Price</th>
+                     <th class="cart-column-price" scope="col">Discount</th>
+                      <th class="cart-column-price" scope="col">MaterialType</th>
+                      <th  class="cart-column-productname" scope="col">CollectionDesc</th>
+                      <th class="cart-column-price" scope="col">Colors</th>
+                      <th class="cart-column-price" scope="col">FabricPurity</th>
+                      <th class="cart-column-price" scope="col">Pattern</th>
+                      <th class="cart-column-price" scope="col">Border</th>
+                      <th class="cart-column-price" scope="col">BorderType</th>
+                      <th class="cart-column-price" scope="col">ZariType</th>
+                      <th class="cart-column-price" scope="col">Length</th>
+                      <th class="cart-column-price" scope="col">Blouse</th>
+                      <th class="cart-column-price" scope="col">BlouseColor</th>
+                      <th class="cart-column-price" scope="col">BlouseLength</th>
+                      <th class="cart-column-price" scope="col">Occassion</th>
+                      <th class="cart-column-price" scope="col">MainImageUrl</th>
+                       <th class="cart-column-price" scope="col">OtherImageUrls</th> 
+                      <th class="cart-column-price" scope="col">Edit</th>
+                      <!-- <th class="cart-column-price" scope="col">delete</th> -->
+                    </tr>
+                  
+                </thead>  
+                <tbody>
+  
+                  <tr *ngFor="let l of productlist">
+                   
+                    <td>
+                      <a href="javascript:;" class="product-title">{{l.inStock}}</a>
+                    </td>
+                    
+                    <td>
+                        <a href="javascript:;" class="product-title">{{l.sku}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{l.price}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{l.discount}}</a>
+                      </td>
+                      <td>
+                        <a href="javascript:;" class="product-title">{{l.materialType}}</a>
+                      </td>
+                      <td>
+                          <a href="javascript:;" class="product-title">{{l.collectionDesc}}</a>
+                        </td>
+                        <td>
+                          <a href="javascript:;" class="product-title">{{l.colors}}</a>
+                        </td>
+                        <td>
+                            <a href="javascript:;" class="product-title">{{l.fabricPurity}}</a>
+                          </td>
+                          <td>
+                            <a href="javascript:;" class="product-title">{{l.pattern}}</a>
+                          </td>
+                          <td>
+                            <a href="javascript:;" class="product-title">{{l.border}}</a>
+                          </td>
+                          
+                          <td>
+                              <a href="javascript:;" class="product-title">{{l.borderType}}</a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="product-title">{{l.zariType}}</a>
+                            </td>
+                            <td>
+                                <a href="javascript:;" class="product-title">{{l.length}}</a>
+                              </td>
+                              <td>
+                                <a href="javascript:;" class="product-title">{{l.blouse}}</a>
+                              </td>
+                              <td>
+                                  <a href="javascript:;" class="product-title">{{l.blouseColor}}</a>
+                                </td>
+                                <td>
+                                  <a href="javascript:;" class="product-title">{{l.blouseLength}}</a>
+                                </td>
+                                <td>
+                                  <a href="javascript:;" class="product-title">{{l.occassion}}</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" class="product-title">{{l.mainImageUrl}}</a>
+                                  </td>
+                                  <td>
+                                    <a href="javascript:;" class="product-title"></a>
+                                  </td>
+                          <td>
+                             
+
+                              <a routerLink="/product" (click)="editproduct(l.imageId)"  class="btn btn-primary btn-sm mr-2">
+                                <i class="fa fa-edit">Edit</i>
+                              </a>
+
+
+
+                            </td>
+                            <!-- <td>
+                              <a href="javascript:;" (click)="delete(l.imageId)"   class="product-title">delete</a>
+                            </td>
+                                   -->
+                    
+                    
+                   
+                  </tr>
+  
+                </tbody>
+              </table>
+              <a routerLink="/add-products" style="margin-left:3cm"><button style="background-color:rgb(48, 224, 42);border-style: none"><b>Add Product</b></button></a>
+            <!-- </div> -->
+          
+  
+          
+  
+          </div>
+        <!-- </div> -->
+       
