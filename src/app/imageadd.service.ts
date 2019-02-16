@@ -26,7 +26,7 @@ export class ImageaddService {
     let promise = new Promise((resolve, reject) => {
      
       
-      return this.http.post( "http://192.168.1.21:8086/control/post/ImageModel/bannerArea?bannerArea="+data.bannerArea, JSON.stringify(data), { headers: this.headers}).toPromise() .then(
+      return this.http.post( "http://localhost:8086/control/post/ImageModel/bannerArea?bannerArea="+data.bannerArea, JSON.stringify(data), { headers: this.headers}).toPromise() .then(
         (res:Response) => { 
             
           this.userdata = res.json();

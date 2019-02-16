@@ -23,12 +23,12 @@ export class ViewimageService {
 
 updateImage(info) {
   console.log(info)
-  return this.http.put(`http://192.168.1.21:8086/control/update/`, info).subscribe(result=>{
+  return this.http.put(`http://localhost:8086/control/update/`, info).subscribe(result=>{
   
    },error=>console.log('there was an erroe:',error));
 }
 delete(id:number){
-  return this.http.delete(`http://192.168.1.21:8086/control/delete/` + id).subscribe(result=>{
+  return this.http.delete(`http://localhost:8086/control/delete/` + id).subscribe(result=>{
     
   alert("Are you sure ")
      },error=>console.log('there was an erroe:',error));

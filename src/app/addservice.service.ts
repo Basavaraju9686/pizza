@@ -25,7 +25,7 @@ export class AddserviceService {
     let promise = new Promise((resolve, reject) => {
     
       
-      return this.http.post( "http://192.168.1.21:8086/v1/addproduct?categoryName="+data.categoryName, JSON.stringify(data), { headers: this.headers}).toPromise() .then(
+      return this.http.post( "http://localhost:8086/v1/addproduct?categoryName="+data.categoryName, JSON.stringify(data), { headers: this.headers}).toPromise() .then(
         (res:Response) => { 
             
           this.userdata = res.json();

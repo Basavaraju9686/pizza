@@ -12,7 +12,7 @@ import 'rxjs/add/observable/throw';
 })
 export class CategoryService { 
            
-  private userURL = "http://192.168.1.21:8086/v1";
+  private userURL = "http://localhost:8086/v1";
   private headers = new Headers({'Content-Type':'application/json'});
   private options = new RequestOptions({headers: this.headers})
   private userdata=[]; 

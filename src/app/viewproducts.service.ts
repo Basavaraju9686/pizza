@@ -24,13 +24,13 @@ export class ViewproductsService {
 
   updateproducts(info) {
   console.log(info)
-  return this.http.put(`http://192.168.1.21:8086/v1/updateproduct/`, info).subscribe(result=>{
+  return this.http.put(`http://localhost:8086/v1/updateproduct/`, info).subscribe(result=>{
     this.router.navigate(['/viewproduct'])
   
    },error=>console.log('there was an erroe:',error));
 }
 delete(id:number){
-  return this.http.delete(`http://192.168.1.21:8086/product/delete/` + id).subscribe(result=>{
+  return this.http.delete(`http://localhost:8086/product/delete/` + id).subscribe(result=>{
     
      },error=>console.log('there was an erroe:',error));
 

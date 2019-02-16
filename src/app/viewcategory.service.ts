@@ -25,7 +25,7 @@ export class ViewcategoryService {
 
   updatecategory(info) {
     console.log(info)
-    return this.http.put(`http://192.168.1.21:8086/v1/category/`, info).subscribe(result=>{
+    return this.http.put(`http://localhost:8086/v1/category/`, info).subscribe(result=>{
       
     
      },error=>console.log('there was an error:',error));
@@ -33,7 +33,7 @@ export class ViewcategoryService {
 
 
 delete(id:number){
-  return this.http.delete(`http://192.168.1.21:8086/v1/category/` + id).subscribe(result=>{
+  return this.http.delete(`http://localhost:8086/v1/category/` + id).subscribe(result=>{
     
      },error=>console.log('there was an error:',error));
 

@@ -16,7 +16,7 @@ export class ListproductsService {
 
 
   getProduct(){
-    let url = 'http://192.168.1.21:8086/v1/product/getall';
+    let url = 'http://localhost:8086/v1/product/getall';
     return this.http.get(url,{ headers: this.headers}).map(data => {
       let res = data;
        console.log(res); 

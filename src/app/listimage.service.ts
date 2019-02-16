@@ -18,7 +18,7 @@ export class ListimageService {
 
 
   getImage(){
-    let url = 'http://192.168.1.21:8086/control/getall';
+    let url = 'http://localhost:8086/control/getall';
     return this.http.get(url,{ headers: this.headers}).map(data => {
       let res = data;
        console.log(res); 

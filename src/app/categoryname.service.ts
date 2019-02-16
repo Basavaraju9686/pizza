@@ -17,7 +17,7 @@ export class CategorynameService {
 
 
   getcategoryname(){
-    let url = 'http://192.168.1.21:8086/v1/category/all';
+    let url = 'http://localhost:8086/v1/category/all';
     return this.http.get(url,{ headers: this.headers}).map(data => {
       let res = data;
        console.log(res); 

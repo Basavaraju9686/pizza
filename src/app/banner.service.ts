@@ -12,7 +12,7 @@ import 'rxjs/add/observable/throw';
 })
 export class BannerService { 
            
-  private userURL = "http://192.168.1.21:8086/banner/post";
+  private userURL = "http://localhost:8086/banner/post";
   private headers = new Headers({'Content-Type' : 'application/json'});
   private options = new RequestOptions({headers: this.headers})
   private userdata=[]; 
