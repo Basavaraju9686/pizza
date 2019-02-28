@@ -9,6 +9,7 @@ import { CategorylistService } from '../categorylist.service';
   templateUrl: './viewcategory.component.html',
   styleUrls: ['./viewcategory.component.css']
 })
+
 export class ViewcategoryComponent implements OnInit {
   categorylist:any;
 
@@ -29,12 +30,17 @@ export class ViewcategoryComponent implements OnInit {
             localStorage.setItem("description", description)
             let categoryId = list.categoryId;
             localStorage.setItem("categoryId", categoryId)
-    
+           
       }
       delete(id:number){
-        alert("Are you sure ")
+       
+       if (confirm("Are you sure ")){
+        
+         this.viewcategoryService.delete(id);
+       }
+      
         console.log(id)
-        this.viewcategoryService.delete(id);
+        
         location.reload();
       }
      

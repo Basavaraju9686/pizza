@@ -19,12 +19,13 @@ export class UpdatecategoryComponent implements OnInit {
   private categoryId=localStorage.getItem("categoryId");
   ngOnInit() {
   }
-  validation=function(info){
-    info.categoryId = this.categoryId;
-    console.log(info)
+  validation=function(list){
+    list.categoryId = this.categoryId;
+    console.log(list)
    
 
-    this.viewcategoryService.updatecategory(info)
+    this.viewcategoryService.updatecategory(list)
   this.router.navigate(['/viewcategory'])
+  location.reload();
   }
 }

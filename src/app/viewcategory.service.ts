@@ -23,9 +23,9 @@ export class ViewcategoryService {
 
 
 
-  updatecategory(info) {
-    console.log(info)
-    return this.http.put(`http://localhost:8086/v1/category/`, info).subscribe(result=>{
+  updatecategory(list) {
+    console.log(list)
+    return this.http.put(`http://localhost:8086/v1/category/`, list).subscribe(result=>{
       
     
      },error=>console.log('there was an error:',error));
