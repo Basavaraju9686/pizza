@@ -1,14 +1,12 @@
   
   <body class="body">
 
-  RIGHT CONTENT AREA
-  <div class="content-area" style="margin-left: 7cm">
+ <div style="    color: whitesmoke;
+ font-weight: 400;
+ font-family: cursive;text-align: center;background: cadetblue;">PIZZA-HUT</div>
+  <div class="content-area" >
     <div class="content-wrapper">
-      <div class="row page-tilte align-items-center">
-        <div class="col-md-auto">
-          <h1 class="weight-300 h3 title">Dashboard</h1>
-        </div>
-      </div>
+    
 
       <div class="content">
         <div class="row">
@@ -17,9 +15,9 @@
                   <div class="card-body p-0">
                     <div class="p-3 pl-4">
                         <div class="media align-items-center">
-                            <span class="material-icons text-info mr-4 circle p-3 border border-info bg-info-light25">shopping_cart</span>
-                            <div class="media-body">
-                                <h4 class="weight-400 m-0">4982</h4>
+                            <span class="fa fa-cutlery"></span>
+                            <div class="media-body" style="text-align: center;">
+                                <h4 class="weight-400 m-0 " style="color: yellowgreen;text-align: center;">{{orderrxvd}}</h4>
                                 <small class="text-muted">Order Recevied</small>
                             </div>
                         </div>
@@ -36,10 +34,10 @@
               <div class="card-body p-0">
                 <div class="p-3 pl-4">
                   <div class="media align-items-center">
-                    <i class="fa fa-rupee text-danger mr-3 circle p-3 border border-danger bg-danger-light25"></i>
-                    <div class="media-body">
-                      <h4 class="weight-400 m-0"><i class="fa fa-rupee mr-2"></i>23,470.00</h4>
-                      <small class="text-muted">Total Earnings</small>
+                    <i class="fa fa-inr"></i>
+                    <div class="media-body" style="text-align: center;">
+                      <h4 class="weight-400 m-0" style="color: yellowgreen;text-align: center;"> <i class="fa fa-rupee mr-2"></i>{{totalamount}}</h4>
+                      <small class="text-muted">Total Amount</small>
                     </div>
                   </div>
                   <div class="progress mt-3" style="height: 6px;">
@@ -55,10 +53,10 @@
               <div class="card-body p-0">
                 <div class="p-3 pl-4">
                   <div class="media align-items-center">
-                    <span class="material-icons text-success mr-3 circle p-3 border border-success bg-success-light25">person_add</span>
-                    <div class="media-body">
-                      <h4 class="weight-400 m-0">619</h4>
-                      <small class="text-muted">New Customers</small>
+                    <span class="fa fa-home"></span>
+                    <div class="media-body" style="text-align: center;">
+                      <h4 class="weight-400 m-0" style="color: yellowgreen;text-align: center;">{{preparing}}</h4>
+                      <small class="text-muted">Preparing</small>
                     </div>
                   </div>
                   <div class="progress mt-3" style="height: 6px;">
@@ -74,10 +72,10 @@
               <div class="card-body p-0">
                 <div class="p-3 pl-4">
                   <div class="media align-items-center">
-                    <span class="material-icons text-warning mr-3 circle p-3 border border-warning bg-warning-light25">group</span>
-                    <div class="media-body">
-                      <h4 class="weight-400 m-0">395</h4>
-                      <small class="text-muted">Active Users</small>
+                    <span class="fa fa-motorcycle"></span>
+                    <div class="media-body" style="text-align: center;">
+                      <h4 class="weight-400 m-0" style="color: yellowgreen;text-align: center;">{{readytoserve}}</h4>
+                      <small class="text-muted">Ready To Serve</small>
                     </div>
                   </div>
                   <div class="progress mt-3" style="height: 6px;">
@@ -90,92 +88,157 @@
           </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 mb-4">
-                <div class="card  h-100">
-                    <div class="card-header py-3">Sales &amp; Users Report</div>
-                    <div class="card-body ">
+            <div class="col-lg-12 mb-4">
+             
                           
-                          <canvas id="canvas"></canvas>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="card mb-4">
+                            <div class="card-header">Product Orders</div>
+                            <div class="card-body table-responsive">
+                                <table id="product-orders" class="table table-striped mb-4 bg-white table-bordered">
+                                  <thead class="thead-light2">
+                                    <!-- <tr  *ngFor="let o of OrderItemList"> -->
+                                      <th>SL No</th>
+                                      <th  class="cart-column-remove" scope="col">CustomerName</th>
+                                    <th class="cart-column-price" scope="col">NoOfOrders</th> 
+                                    <th class="cart-column-price" scope="col">TotalAmount (₹)</th> 
+                                     <th class="cart-column-quantity" scope="col">Status</th> 
+                                    
+                                    <!-- </tr> -->
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let o of OrderItemList index as i">
+                                      <td>{{i+1}}</td>
+                                      <td data-toggle="modal" data-target="#modal_aside_right" class="product-title" (click)="viewitems(o)">
+                                        <!-- productId -->
+                                        <a  >{{o.customerName}}</a>
+                                      </td>
+                                      <td data-toggle="modal" data-target="#modal_aside_right" class="product-title"  (click)="viewitems(o)">
+                                        <a  >{{o.NoOfOrders}}</a>
+                                      </td>
+                                      <td data-toggle="modal" data-target="#modal_aside_right" class="product-title"  (click)="viewitems(o)">
+                                        <a  >{{o.TotalAmount}}</a>
+                                      </td>
+                                      <td>
+                                     
+<button type="button" class="btn btn-info col-sm-9"  *ngIf="o.Status=='OrderReceived'" (click)="checkstatus(o.Status,o.Id)" >Order Received <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></button>
+<button type="button" class="btn btn-primary col-sm-9"  *ngIf="o.Status=='Preparing'" (click)="checkstatus(o.Status,o.Id)">Preparing Item <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></button>
+<button type="button" class="btn btn-warning col-sm-9"  *ngIf="o.Status=='ReadyToServe'" (click)="checkstatus(o.Status,o.Id)">ReadyTo Serve <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></button>
 
-                    </div>
-                </div>
+                                        <!-- <button class="product-title" (click)="checkstatus(o.Status)">{{o.Status}}</button> -->
+                                      </td>
+                                     
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            <div class="card-body table-responsive">
+                
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <!-- </div>
+                </div> -->
             </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h6 class="weight-400 mb-3 border-left border-warning pl-2 border-width-medium">India <span class="text-muted">Sales Report</span></h6>
-                        <div class="row">
-                            <div class="col">
-                                <small class="text-muted weight-300">Today</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Week</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Month</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                        </div>
-                        <div class="progress mt-3" style="height: 6px;">
-                          <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h6 class="weight-400 mb-3 border-left border-primary pl-2 border-width-medium">USA <span class="text-muted">Sales Report</span></h6>
-                        <div class="row">
-                            <div class="col">
-                                <small class="text-muted weight-300">Today</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Week</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Month</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                        </div>
-                        <div class="progress mt-3" style="height: 6px;">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="weight-400 mb-3 border-left border-danger pl-2 border-width-medium">India <span class="text-muted">Sales Report</span></h6>
-                        <div class="row">
-                            <div class="col">
-                                <small class="text-muted weight-300">Today</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Week</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                            <div class="col">
-                                <small class="text-muted weight-300">This Month</small>
-                                <div class="weight-400"><i class="fa fa-rupee mr-2"></i>28,343</div>
-                            </div>
-                        </div>
-                        <div class="progress mt-3" style="height: 6px;">
-                          <div class="progress-bar bg-secondary" role="progressbar" style="width: 35%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar " role="progressbar" style="width: 10%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                          <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
         </div>
       </div>
     </div>
   </div>
   </body>
+
+<div id="modal_aside_right" class="modal fixed-right fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-aside" role="document">
+    <div class="modal-content">
+      <div class="modal-header family">
+        <h5 class="modal-title">View Order Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <table id="product-orders" class="table table-striped mb-4 bg-white table-bordered">
+          <thead class="thead-light2">
+          
+              <th  class="cart-column-remove" scope="col">CustomerName</th>
+              <th  class="cart-column-remove" scope="col">Delivery Address</th>
+
+            <th class="cart-column-price" scope="col">ItemsName</th> 
+            <th class="cart-column-price" scope="col">TotalAmount (₹)</th> 
+            
+          </thead>
+          <tbody>
+            <tr *ngFor="let o of ViewOrderItemList index as i">
+             
+              <td class="product-title">
+                <a  >{{o.customerName}}</a>
+              </td>
+              <td class="product-title">
+                <a  >{{o.address}}</a>
+              </td>
+              <td  class="product-title">
+                <li *ngFor="let items of o.Items index as i">
+                  {{items.itemName}} ₹{{items.price}}
+                </li>
+              </td>
+              <td  class="product-title">
+                <a  >{{o.TotalAmount}}</a>
+              </td>
+             
+             
+            </tr>
+          </tbody>
+        </table> -->
+      <div class="row family">
+        <div class="col-sm-6 color" >
+CustomerName
+        </div>
+        <div class="col-sm-6 ">
+          {{ViewOrderItemList.customerName}}
+        </div>
+      </div>
+      <div class="row family">
+        <div class="col-sm-6 color">
+DeliveryAddress
+        </div>
+        <div class="col-sm-6">
+          {{ViewOrderItemList.address}}
+        </div>
+      </div>
+      <div class="row family">
+        <div class="col-sm-6 color">
+Items
+        </div>
+        <div class="col-sm-6">
+          <li *ngFor="let item of ViewOrderItemList.Items index as i">{{item.itemName}} ₹{{item.price*item.qty}}/-</li>
+        </div>
+      </div>
+      <div class="row family">
+        <div class="col-sm-6 color">
+TotalPrice
+        </div>
+        <div class="col-sm-6">
+          ₹{{ViewOrderItemList.TotalAmount}}/-
+        </div>
+      </div>
+
+      <div class="row family">
+        <div class="col-sm-6 color">
+Status
+        </div>
+        <div class="col-sm-6">
+          {{ViewOrderItemList.Status}}
+        </div>
+      </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save</button> -->
+      </div>
+    </div>
+  </div> <!-- modal-bialog .// -->
+</div> 

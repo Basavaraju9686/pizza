@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EhaAdmin</title>
+  <title>PizzaHut</title>
   <base href="./">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
+      
       <link rel="icon" href="assets/images/favicon.ico">
       <link href="assets/css/messages.css" rel="stylesheet">
       <link rel="stylesheet" href="assets/css/style.css">
@@ -38,5 +39,24 @@
 
    <script src="assets/js/pages/dashboard.script.js"></script>
    <script src="assets/js/pages/ecommerce-dashboard.js"></script>
+  
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
 </body>
 </html>

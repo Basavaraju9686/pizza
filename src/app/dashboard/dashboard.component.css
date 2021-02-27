@@ -1,0 +1,16 @@
+thead{
+    font-size: 21px;
+    text-align: center;
+}
+td{
+    text-align: center;
+    cursor: pointer;
+}
+.color{
+    color: goldenrod;
+    font-family: sans-serif;
+}
+.family{
+    font-family: sans-serif;
+ 
+}
